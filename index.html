@@ -1,0 +1,163 @@
+<html>
+<head>
+	<title>太公報</title>
+	<meta charset="utf-8">
+	<link rel='shortcut icon' type='image/png' href='img/favicon.png' />
+
+  <meta name = "description" content = "takungpao, 大公網, 港聞, 太公報, 香港, 文化, takongpao, 新聞." />
+  <meta name = "keywords" content = "takungpao, 大公網, 港聞, 太公報, 香港, 文化, takongpao, 新聞" />
+  <meta property="og:url" content="http://takongpao.com/" />
+  <meta property="og:title" content="TaKongPao" />
+  <meta property="og:description" content="最新太公報首頁, 隨時隨地為你提供更方便的搜尋服務, 以及你最關心的新聞及資訊"/>
+  <meta property="og:site_name" content="太公報" />
+
+   <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	  <link rel="stylesheet" type="text/css" href="style1.2.css">
+       <link rel="stylesheet" type="text/css" href="weather1.1.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script type="text/javascript" src="lunerCalendar.js"></script>
+      <script type="text/javascript" src="weather2.js"></script>
+    
+    
+<link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+
+	
+
+</head>
+
+<body>
+
+<div class="head">
+    <div class="headerobjectswrapper">
+        <div class="weatherforcastbox">
+
+             <div id="internal-container"> 
+                <h1>本港天氣</h1>  
+                <div class="button-container">
+                  <button class="temp-toggle-button active" id="celsius">攝氏</button>
+                  <button class="temp-toggle-button" id="farenheit">華氏</button> 
+                </div> 
+                <div class="variable-container">
+                  <div class="minor-container temp-container">
+                      <img class="information-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/77870-200.png">
+                      <p id="temperature"></p>
+                    </div>
+                  <div class="major-container">
+                      <img id="weather-icon" >
+                      <h2 id="weather-description"></h2>
+                    </div>
+                  <div class="minor-container wind-container">
+                      <img class="information-icon" src="https://d30y9cdsu7xlg0.cloudfront.net/png/77881-200.png">
+                      <p id="wind-speed"></p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <header>太公報</header>
+
+    </div>
+
+    <div class="subhead">
+        <div class="col-lg-3 hidden-md hidden-xs hidden-sm">朱經緯亂棍打人 - 第 <span id="diffD"></span> 日</div>
+        <div class="col-lg-6 col-md-12 centered"><span id="spanDate"></span> 香 港 <span id="weekday"></span> - TA KONG PAO - "L'lmpareial"</div>
+        <div class="col-lg-3 hidden-md hidden-xs hidden-sm"><span id="luner"></span></div>
+      </div>
+
+    </div>
+
+<div class="content">
+  <div class="collumns">
+
+
+
+
+		
+
+</div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="row">
+    <div class="col-xs-12">
+     <div id="footer-box">  
+        <p>《2016 太公報序》曰: 開風氣，牗民智，挹彼歐西學術，啟我同胞聰明。</p>
+        <p>凡我同人亦當猛自策勵，堅善與人同之志，擴大公無我之懷，顧名思義，不負所學，但冀風移俗易，國富民強，物無災苦，人有樂康，則於同人之志嘗焉，鄙人之心慰已。
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a></P>
+        <br />
+       
+    </div>    
+    </div>  
+</div> <!-- ends row -->
+<!-- FOOTER -->
+        
+
+
+
+
+
+
+</body>
+
+<script type="text/javascript">
+
+// calendar
+
+//  var months = ['1 月','2 月','3 月','4 月','5 月','6 月','7 月',
+// '8 月','9 月','10 月','11 月','12 月'];       
+// var tomorrow = new Date();
+// tomorrow.setTime(tomorrow.getTime() + (1000*3600*24));       
+// document.getElementById("spanDate").innerHTML = months[tomorrow.getMonth()] + " " + tomorrow.getDate()+ " 日" + ", " + tomorrow.getFullYear();
+
+var Today=new Date();
+document.getElementById("luner").innerHTML = "農曆  "+LunarDate.GetLunarDay(Today.getFullYear(), (Today.getMonth()+1), Today.getDate());
+document.getElementById("spanDate").innerHTML = Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日";
+
+//weekdays
+
+//var d = new Date();
+var weekday = new Array(7);
+weekday[0]=  "星期日版";
+weekday[1] = "星期一";
+weekday[2] = "星期二";
+weekday[3] = "星期三";
+weekday[4] = "星期四";
+weekday[5] = "星期五";
+weekday[6] = "週六";
+
+var n = weekday[Today.getDay()];
+document.getElementById("weekday").innerHTML = n;
+
+// 朱經緯counter
+
+var oneDay = 24*60*58*1000; // hours*minutes*seconds*milliseconds
+var firstDate = new Date(2014,11,27);
+var secondDate = new Date(Today);
+var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)));
+document.getElementById("diffD").innerHTML = diffDays;
+
+// luner calendar
+
+// var Today=new Date();
+// document.getElementById("luner").innerHTML = "農曆  "+LunarDate.GetLunarDay(Today.getFullYear(), (Today.getMonth()+1), Today.getDate());
+// document.getElementById("spanDate").innerHTML = Today.getFullYear()+ " 年 " + (Today.getMonth()+1) + " 月 " + Today.getDate() + " 日";
+
+
+
+
+</script>
+
+
+
+</html>
